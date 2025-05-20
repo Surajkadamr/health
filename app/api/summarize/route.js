@@ -1,3 +1,4 @@
+import { File } from 'node:buffer'; // Explicitly import File
 import { NextRequest, NextResponse } from 'next/server';
 // formidable is no longer used
 // fs.promises might not be needed if not writing temp files, but Gemini SDK might use it or other fs aspects.
