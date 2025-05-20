@@ -127,13 +127,19 @@ Now, process the following medical report OCR text and provide ONLY the JSON out
     // Initialize geminiParts with the user prompt
     const geminiParts = [userPrompt];
 
-    for (const file of files) {
-        // The instanceof File check is removed.
-        // We rely on the presence of properties like .type, .name, .size, and .arrayBuffer()
-        // which Next.js provides for file parts from formData.
+    for (const rawFile of files) { // Renamed to rawFile
+        // Create a new plain object with only the properties we strictly need.
+        // This helps to decouple from the specific instance type returned by formData.
+        const file = {
+            name: rawFile.name,
+            type: rawFile.type,
+            size: rawFile.size,
+            // Ensure arrayBuffer is a function that calls the original rawFile.arrayBuffer
+            arrayBuffer: typeof rawFile.arrayBuffer === 'function' ? () => rawFile.arrayBuffer() : undefined,
+        };
         
-        if (typeof file.arrayBuffer !== 'function' || !file.name || typeof file.size === 'undefined') {
-             console.error('Uploaded item does not appear to be a valid file object:', file);
+        if (typeof file.arrayBuffer !== 'function' || !file.name || typeof file.size === 'undefined' || !file.type) {
+             console.error('Uploaded item does not appear to be a valid file object after sanitizing:', file, 'Original details:', { name: rawFile.name, type: rawFile.type, size: rawFile.size, hasArrayBuffer: typeof rawFile.arrayBuffer === 'function' });
              return NextResponse.json({ error: 'One of the uploaded items is not structured as expected for a file.' }, { status: 400 });
         }
 
@@ -150,9 +156,9 @@ Now, process the following medical report OCR text and provide ONLY the JSON out
 
         const fileBuffer = Buffer.from(await file.arrayBuffer());
         geminiParts.push({
-            inline_data: {
+            inlineData: { // Changed from inline_data to inlineData
                 data: fileBuffer.toString('base64'),
-                mime_type: 'application/pdf'
+                mimeType: file.type // Changed from mime_type to mimeType
             }
         });
         console.log(`Added file ${file.name} to Gemini request parts.`);
