@@ -1,0 +1,268 @@
+/* Styles for app/dashboard/page.js */
+
+/* General Card Styles */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.cardHeader {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cardTitle {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+  color: #111827;
+}
+
+.cardContent {
+  padding: 24px;
+}
+
+/* Loading State */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.loadingText {
+  font-size: 1.125rem; /* 18px */
+  color: #6b7280;
+}
+
+/* No Data State */
+.noDataMain {
+  max-width: 80rem; /* max-w-5xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: center;
+}
+
+.noDataCard {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+.noDataCardHeader {
+  margin-bottom: 12px;
+}
+.noDataCardTitle {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+}
+.noDataCardContent p {
+  color: #6b7280;
+}
+.uploadLink {
+  color: #007bff;
+  text-decoration: underline;
+}
+.uploadLink:hover {
+  color: #0056b3;
+}
+
+
+/* Dashboard Page Specific */
+.dashboardMain {
+  background-color: #f9fafb; /* bg-slate-50 */
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.dashboardContainer {
+  max-width: 96rem; /* max-w-6xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.dashboardTitle {
+  font-size: 2.25rem; /* text-3xl sm:text-4xl */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 32px;
+  color: #1f2937; /* text-foreground */
+}
+
+/* Patient Info Card */
+.patientInfoCard {} /* Extends .card */
+.patientInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px 24px;
+  font-size: 0.875rem; /* text-sm */
+}
+@media (min-width: 768px) { /* md: */
+  .patientInfoGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .patientInfoItemFullWidth {
+    grid-column: span 2 / span 2;
+  }
+}
+.patientInfoItem {}
+.patientInfoKey {
+  font-weight: 600;
+  color: #1f2937; /* text-foreground */
+}
+.patientInfoValue {
+  margin-left: 8px;
+  color: #6b7280; /* text-muted-foreground */
+}
+
+/* Summary Card */
+.summaryCard {} /* Extends .card */
+.summaryText {
+  color: #6b7280; /* text-muted-foreground */
+  white-space: pre-wrap;
+}
+
+/* Timeline Card */
+.timelineCard {} /* Extends .card */
+.timelineContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* space-y-6 */
+}
+.timelineEventCard {
+  background-color: #ffffff;
+  border-left: 4px solid #007bff; /* border-primary */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.timelineEventTitle {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600;
+}
+.timelineEventDescription {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 4px;
+}
+.timelineEventSummary {
+  font-size: 0.875rem;
+  color: #4b5563; /* Slightly darker than muted */
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.timelineEventDetailsContainer {
+  margin-top: 16px;
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* space-y-3 */
+}
+.timelineDetailsTitle {
+  font-weight: 600;
+  font-size: 1rem; /* text-md */
+  color: #1f2937; /* text-foreground */
+  margin-bottom: 8px;
+}
+
+/* Panels within Timeline */
+.panelsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* space-y-4 */
+}
+.panel {
+  padding: 12px;
+  border: 1px solid #e5e7eb; /* border */
+  border-radius: 6px; /* rounded-md */
+  background-color: #f9fafb; /* bg-slate-50 */
+}
+.panelName {
+  font-weight: 600;
+  color: #1f2937; /* text-foreground */
+  margin-bottom: 8px;
+}
+.tableContainer {
+  overflow-x: auto;
+}
+.resultsTable {
+  width: 100%;
+  text-align: left;
+  font-size: 0.75rem; /* text-xs */
+  border-collapse: collapse;
+}
+.resultsTable th, .resultsTable td {
+  padding: 8px; /* p-2 */
+  border-top: 1px solid #e5e7eb; /* border-t border-border */
+}
+.resultsTable th {
+  background-color: #f3f4f6; /* bg-slate-100 */
+  font-weight: 600;
+}
+.resultsTable td.flagMuted { color: #6b7280; }
+.resultsTable td.flagHigh { color: #dc2626; font-weight: 600; } /* text-red-600 */
+.resultsTable td.flagLow { color: #f97316; font-weight: 600; } /* text-orange-500 */
+.resultsTable td.flagNormal { color: #16a34a; } /* text-green-600 */
+
+.tableRow {}
+.tableRowFlagged {
+  /* background-color: #fee2e2; */ /* bg-destructive/10 - light red */
+}
+.tableRow td:first-child { color: #1f2937; } /* text-foreground */
+.tableRow td:nth-child(3), .tableRow td:nth-child(4) { color: #6b7280; } /* text-muted-foreground for unit & range */
+
+
+/* Detail Object (non-panel) */
+.detailObject {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: #f9fafb;
+}
+.detailObjectTitle {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+.detailObjectContent {
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* space-y-0.5 */
+}
+.detailObjectContent p {}
+.detailItemKey {
+  font-weight: 500;
+  /* color: #374151; */ /* text-foreground/80 */
+}
+.detailItemValue {
+  margin-left: 6px;
+  color: #6b7280;
+}
+
+/* Detail Simple (key-value pair) */
+.detailSimple {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.detailSimpleKey {
+  font-weight: 600;
+  color: #1f2937;
+}
+.detailSimpleValue {
+  margin-left: 8px;
+  color: #6b7280;
+}
+
+/* Flag classes for getFlagClass */
+.flagMuted { color: #6b7280; }
+.flagHigh { color: #dc2626; font-weight: 600; }
+.flagLow { color: #f97316; font-weight: 600; }
+.flagNormal { color: #16a34a; }

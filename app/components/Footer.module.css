@@ -1,0 +1,46 @@
+/* Styles for Footer.js */
+.footer {
+  background-color: #eef2f7; /* Subtle darker background */
+  color: #4a5568; /* Slightly softer text color */
+  border-top: none; /* Remove top border */
+  padding: 2rem 1rem; /* Consistent padding */
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px; /* Constrain container width for better readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.disclaimerBox {
+  margin-bottom: 1.5rem;
+  padding: 1rem; /* Standard padding */
+  background-color: transparent; /* Blend disclaimer box with footer background */
+  border-radius: 0px; /* No radius if blending */
+  border: none; /* No border if blending */
+  box-shadow: none; /* No shadow if blending */
+  /* max-width: 800px; /* Already on container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.disclaimerTitle {
+  font-weight: 600;
+  color: #2d3748; /* Darker text for title */
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem; /* Slightly smaller title */
+}
+
+.disclaimerText {
+  font-size: 0.8rem; /* Slightly smaller text */
+  line-height: 1.5;
+  color: #4a5568; /* Match footer text color */
+}
+
+.copyrightText {
+  font-size: 0.8rem; /* Slightly smaller text */
+  color: #718096; /* Softer copyright text color */
+  margin-top: 1.5rem; /* More space above copyright */
+}

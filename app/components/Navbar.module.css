@@ -1,0 +1,57 @@
+/* Styles for Navbar.js */
+.navbar {
+  background-color: #ffffff; /* Was bg-background */
+  border-bottom: 1px solid #e5e7eb; /* Was border-b */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Was shadow-sm */
+}
+
+.container {
+  max-width: 96rem; /* Was max-w-6xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem; /* px-4 */
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem; /* py-4 */
+  padding-bottom: 1rem; /* py-4 */
+}
+
+.brandLink {
+  font-size: 1.5rem; /* Was text-2xl */
+  font-weight: 700; /* Was font-bold */
+  color: #007bff; /* Was text-primary, assuming a blue primary */
+  text-decoration: none;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1.5rem; /* Was space-x-6 */
+}
+
+.navLink {
+  color: #6b7280; /* Was text-muted-foreground */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out; /* Was transition-colors */
+}
+
+.navLink:hover {
+  color: #007bff; /* Was hover:text-primary */
+}
+
+.activeLink { /* Example for an active link */
+  color: #007bff; /* Was text-primary */
+  font-weight: 600; /* Was font-semibold */
+}
+
+.activeLink:hover {
+  color: #0056b3; /* Was hover:text-primary/80 */
+}

@@ -1,0 +1,123 @@
+/* Styles for app/page.js */
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f7f9fc; /* Light, clean background */
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.homeMainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.homeHeader {
+  margin-bottom: 40px;
+}
+
+.homeMainTitle {
+  font-size: 3rem; /* 48px */
+  font-weight: 700;
+  color: #2c3e50; /* Darker, sophisticated blue-gray */
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.homeSubtitle {
+  font-size: 1.25rem; /* 20px */
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.uploadCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 550px; /* Slightly wider card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.uploadCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.uploadCardHeader {
+  margin-bottom: 25px;
+}
+
+.uploadCardTitle {
+  font-size: 1.75rem; /* 28px */
+  font-weight: 600;
+  color: #34495e; /* Another shade of blue-gray */
+}
+
+.uploadCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selectFileButton,
+.analyzeButton {
+  background-color: #3498db; /* Primary blue */
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 1rem; /* 16px */
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.selectFileButton:hover,
+.analyzeButton:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: translateY(-2px);
+}
+
+.analyzeButton:disabled {
+  background-color: #bdc3c7; /* Gray when disabled */
+  cursor: not-allowed;
+  transform: none;
+}
+
+.errorMessage {
+  color: #e74c3c; /* Red for errors */
+  font-size: 0.9rem; /* 14.4px */
+  margin-top: 10px;
+}
+
+.loadingIndicator {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.progressBarContainer {
+  width: 100%;
+  background-color: #e0e0e0; /* Light gray for progress bar background */
+  border-radius: 5px;
+  height: 10px;
+  overflow: hidden; /* Ensures progress bar stays within container */
+}
+
+.progressBar {
+  background-color: #3498db; /* Primary blue for progress */
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease-out;
+}
