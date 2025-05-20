@@ -128,11 +128,15 @@ Now, process the following medical report OCR text and provide ONLY the JSON out
     const geminiParts = [userPrompt];
 
     for (const file of files) {
-        if (!(file instanceof File)) {
-            console.error('Uploaded item is not a file:', file);
-            return NextResponse.json({ error: 'One of the uploaded items is not a valid file.' }, { status: 400 });
-        }
+        // The instanceof File check is removed.
+        // We rely on the presence of properties like .type, .name, .size, and .arrayBuffer()
+        // which Next.js provides for file parts from formData.
         
+        if (typeof file.arrayBuffer !== 'function' || !file.name || typeof file.size === 'undefined') {
+             console.error('Uploaded item does not appear to be a valid file object:', file);
+             return NextResponse.json({ error: 'One of the uploaded items is not structured as expected for a file.' }, { status: 400 });
+        }
+
         if (file.type !== 'application/pdf') {
             console.error(`Invalid file type uploaded: ${file.type} for file ${file.name}`);
             return NextResponse.json({ error: `Invalid file type for ${file.name}. Only PDFs are allowed.` }, { status: 400 });
