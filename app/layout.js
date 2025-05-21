@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "HealthViz - AI Health Report Analyzer", // Updated title
+  title: "Bodyclone HealthAI - AI Health Report Analyzer", // Updated title
   description: "Upload your PDF health report and get an AI-powered summary and dashboard.", // Updated description
 };
 

@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className={styles.navContent}>
           {/* <Link href="/" className="text-2xl font-bold text-primary"> */}
           <Link href="/" className={styles.brandLink}>
-            HealthViz
+            Bodyclone HealthAI
           </Link>
           {/* <ul className="flex items-center space-x-6"> */}
           <ul className={styles.navList}>
