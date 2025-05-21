@@ -21,7 +21,7 @@ export default function Footer() {
         </div>
         {/* <p className="text-sm text-slate-500"> */}
         <p className={styles.copyrightText}>
-          &copy; {new Date().getFullYear()} HealthViz. All rights reserved.
+          &copy; {new Date().getFullYear()} Bodyclone HealthAI. All rights reserved.
         </p>
       </div>
     </footer>
